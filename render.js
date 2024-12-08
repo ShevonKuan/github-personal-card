@@ -104,14 +104,14 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
     if (data.options.followers) {
         templete = templete.replace(
             '{{followers}}',
-            getSVGMini('./assets/icons/followers.svg', 330, 4, 13, 'rgba(255, 255, 255, 0.5)')
+            getSVGMini('/assets/icons/followers.svg', 330, 4, 13, 'rgba(255, 255, 255, 0.5)')
             + getText(libs.kFormatter(user.followers.totalCount), 390, 4, 13, 'rgba(255, 255, 255, 0.5)', `text-anchor="end" dominant-baseline="hanging"`)
         );
     }
     if (data.options.repo) {
         templete = templete.replace(
             '{{repo}}',
-            getSVGMini('./assets/icons/repo.svg', 330, 27, 13, 'rgba(255, 255, 255, 0.5)')
+            getSVGMini('/assets/icons/repo.svg', 330, 27, 13, 'rgba(255, 255, 255, 0.5)')
             + getText(libs.kFormatter(user.repositories.totalCount), 390, 27, 13, 'rgba(255, 255, 255, 0.5)', `text-anchor="end" dominant-baseline="hanging"`)
         );
     }
@@ -137,12 +137,12 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
     }
     if (data.options.company) {
         var y = Y.shift();
-        detail.push(getSVGMini('./assets/icons/company.svg', 118, y+2, fontSize-1, 'rgba(255, 255, 255, 0.7)'));
+        detail.push(getSVGMini('/assets/icons/company.svg', 118, y+2, fontSize-1, 'rgba(255, 255, 255, 0.7)'));
         detail.push(getText(user.company, 123+fontSize, y, fontSize, 'rgba(255, 255, 255, 0.7)', `text-anchor="start" dominant-baseline="hanging"`));
     }
     if (data.options.location) {
         var y = Y.shift();
-        detail.push(getSVGMini('./assets/icons/location.svg', 118, y+2, fontSize-1, 'rgba(255, 255, 255, 0.7)'));
+        detail.push(getSVGMini('/assets/icons/location.svg', 118, y+2, fontSize-1, 'rgba(255, 255, 255, 0.7)'));
         detail.push(getText(user.location, 123+fontSize, y, fontSize, 'rgba(255, 255, 255, 0.7)', `text-anchor="start" dominant-baseline="hanging"`));
     }
 
