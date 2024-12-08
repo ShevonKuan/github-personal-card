@@ -30,12 +30,17 @@ export const getText = (text, x, y, size, fill = '#fff', alignment) => {
 const replaceCalcedColors = (data, svg) => {
     let color = data.options.colorPalette;
 
-    svg = svg.replace(/\{\{c1\}\}/g, new Color(`rgb(${color[0].join(',')})`).hex());
-    svg = svg.replace(/\{\{c2\}\}/g, new Color(`rgb(${color[1].join(',')})`).hex());
-    svg = svg.replace(/\{\{c3\}\}/g, new Color(`rgb(${color[2].join(',')})`).hex());
-    svg = svg.replace(/\{\{c4\}\}/g, new Color(`rgb(${color[3].join(',')})`).hex());
-    svg = svg.replace(/\{\{c5\}\}/g, new Color(`rgb(${color[4].join(',')})`).hex());
-    svg = svg.replace(/\{\{c6\}\}/g, new Color(`rgb(${color[5].join(',')})`).hex());
+    // svg = svg.replace(/\{\{c1\}\}/g, new Color(`rgb(${color[0].join(',')})`).hex());
+    // svg = svg.replace(/\{\{c2\}\}/g, new Color(`rgb(${color[1].join(',')})`).hex());
+    // svg = svg.replace(/\{\{c3\}\}/g, new Color(`rgb(${color[2].join(',')})`).hex());
+    // svg = svg.replace(/\{\{c4\}\}/g, new Color(`rgb(${color[3].join(',')})`).hex());
+    // svg = svg.replace(/\{\{c5\}\}/g, new Color(`rgb(${color[4].join(',')})`).hex());
+    // svg = svg.replace(/\{\{c6\}\}/g, new Color(`rgb(${color[5].join(',')})`).hex());
+
+    color.forEach((c, i) => {
+        svg = svg.replace(new RegExp(`\\{\\{c${i + 1}\\}\\}`, 'g'), `rgb(${c.join(',')})`);
+    }
+    );
 
     return svg;
 };
