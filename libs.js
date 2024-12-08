@@ -6,8 +6,8 @@ import ColorThief from 'colorthief';
 import wrap from "word-wrap";
 
 
-export const getSVG = (svgPath) => {
-    const filePath = path.join(process.cwd(), `${svgPath}`);
+export const getSVG = (fileName) => {
+    const filePath = path.join(process.cwd(), `/assets/icons/${fileName}.svg`);
     const playmodeSVG = fs.readFileSync(filePath, 'utf8');
     return playmodeSVG;
 };
