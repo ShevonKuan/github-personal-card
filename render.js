@@ -111,7 +111,7 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
     if (data.options.repo) {
         templete = templete.replace(
             '{{repo}}',
-            getSVGMini('repo.svg', 330, 27, 13, 'rgba(255, 255, 255, 0.5)')
+            getSVGMini('repo', 330, 27, 13, 'rgba(255, 255, 255, 0.5)')
             + getText(libs.kFormatter(user.repositories.totalCount), 390, 27, 13, 'rgba(255, 255, 255, 0.5)', `text-anchor="end" dominant-baseline="hanging"`)
         );
     }
