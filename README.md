@@ -1,6 +1,6 @@
 # osu-stats-signature
 
-[![GitHub](https://img.shields.io/github/license/ShevonKuan/github-personal-card?color=blue&style=for-the-badge)](https://github.com/ShevonKuan/github-personal-card/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/ShevonKuan/github-personal-card?color=ff69b4&style=for-the-badge)](https://github.com/ShevonKuan/github-personal-card/stargazers) [![GitHub last commit](https://img.shields.io/github/last-commit/ShevonKuan/github-personal-card?style=for-the-badge)](https://github.com/ShevonKuan/github-personal-card/commits/master)
+[![GitHub](https://img.shields.io/github/license/ShevonKuan/github-personal-card?color=blue&style=for-the-badge)](https://github.com/ShevonKuan/github-personal-card/blob/main/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/ShevonKuan/github-personal-card?color=ff69b4&style=for-the-badge)](https://github.com/ShevonKuan/github-personal-card/stargazers) [![GitHub last commit](https://img.shields.io/github/last-commit/ShevonKuan/github-personal-card?style=for-the-badge)](https://github.com/ShevonKuan/github-personal-card/commits/main)
 
 ## Introduction
 
