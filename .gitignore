@@ -106,3 +106,5 @@ dist
 # Original SVG Template Files
 /assets/orig_ai_files/
 .DS_Store
+package-lock.json
+pnpm-lock.yaml

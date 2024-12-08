@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 120"
+    width="{{width}}" height="{{height}}">
+    <defs>
+        <style>
+            .transparent {
+                fill: none;
+            }
+            .backgroud{
+                fill: {{c2}};
+            }
+            .c1 {
+                fill: {{c1}};
+            }
+            .detail-card {
+                fill: {{c1}};
+                opacity: 0.5;
+            }
+            .cls-3 {
+                clip-path: url(#clip-path);
+            }
+            .backgroud-opacity {
+                opacity: 0.5;
+            }
+
+            .c3 {
+                fill: {{c3}};
+            }
+            .white {
+                fill: {{c1}};
+            }
+            .c4 {
+                fill: {{c4}};
+            }
+            .c5 {
+                fill: {{c5}};
+            }
+            .c6 {
+                fill: {{c6}};
+            }
+            .avatar {
+                clip-path: url(#clip-path-2);
+                outline: 1px solid transparent;
+            }
+        </style>
+        <clipPath id="clip-path">
+            <path class="transparent"
+                d="M392,120H8a8.024,8.024,0,0,1-8-8V8A8.024,8.024,0,0,1,8,0H392a8.024,8.024,0,0,1,8,8V112A8.024,8.024,0,0,1,392,120Z" />
+        </clipPath>
+        <clipPath id="clip-path-2">
+            <path id="avatar_clip" class="transparent"
+                d="M102,105H20a4.012,4.012,0,0,1-4-4V19a4.012,4.012,0,0,1,4-4h82a4.012,4.012,0,0,1,4,4v82A4.012,4.012,0,0,1,102,105Z" />
+        </clipPath>
+        <style>
+            @keyframes fadeDown {
+                0% {
+                    opacity: 0;
+                    transform: translateX(80px) translateY(30px);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateX(0) translateY(0);
+                }
+            }
+
+            @keyframes fadeUp {
+                0% {
+                    opacity: 0;
+                    transform: translateX(80px) translateY(-30px);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateX(0) translateY(0);
+                }
+            }
+
+            #fg.animation-enabled .animated {
+                opacity: 0;
+                transform: translateX(20px);
+                animation: fadeUp .3s ease-in-out forwards;
+            }
+
+            #fg.animation-enabled .animated-2 {
+                opacity: 0;
+                transform: translateX(20px);
+                animation: fadeDown .3s ease-in-out forwards;
+            }
+        </style>
+    </defs>
+    <g id="bg">
+        <rect class="backgroud" width="400" height="120" rx="8" />
+        <g id="head">
+            <g class="cls-3">
+                <image class="backgroud-opacity" width="400" height="120" xlink:href="{{user-cover-base64}}" />
+            </g>
+
+        </g>
+    </g>
+    <g id="fg" class="{{fg-extra-class}}">
+
+        <g id="userinfo">
+            <!-- 半透明遮罩1 -->
+            <g class="animated-2" style="animation-delay: 380ms;">
+                <path class="detail-card"
+                    d="M392 120H8a8.024 8.024 0 01-8-8V53.864A8.024 8.024 0 018 45.84H392a8.024 8.024 0 018 8V112A8.024 8.024 0 01392 120Z" />
+            </g>
+            <!-- 头像 -->
+            <g id="avatar" class="animated" style="animation-delay: 250ms;">
+                <g class="avatar">
+                    <image width="256" height="256" transform="translate(16 15) scale(0.352)"
+                        xlink:href="{{avatar-base64}}" />
+                </g>
+            </g>
+            <!-- name -->
+            <g class="animated" style="animation-delay: 290ms;">
+                {{name}}
+            </g>
+            <!-- login -->
+            <g class="animated" style="animation-delay: 290ms;">
+                {{login}}
+            </g>
+            <!-- detail -->
+            <g class="animated-2" style="animation-delay: 450ms;">
+                {{detail}}
+            </g>
+            <!-- followers and repo -->
+            <g class="animated" style="animation-delay: 450ms;">
+                <!-- <rect class="c1" x="120.013" y="57.748" width="85" height="3" /> -->
+                {{followers}}
+                {{repo}}
+            </g>
+            <!-- <rect class="c3" x="125.013" y="57.748" width="3" height="30" />
+            <rect class="c4" x="130.013" y="57.748" width="3" height="30" />
+            <rect class="c5" x="135.013" y="57.748" width="3" height="30" />
+            <rect class="c6" x="140.013" y="57.748" width="3" height="30" /> -->
+        </g>
+
+    </g>
+</svg>

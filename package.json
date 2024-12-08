@@ -1,0 +1,43 @@
+{
+	"name": "github-personal-card",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ShevonKuan/github-personal-card.git"
+	},
+	"author": "ShevonKuan",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ShevonKuan/github-personal-card/issues"
+	},
+	"homepage": "https://github.com/ShevonKuan/github-personal-card#readme",
+	"dependencies": {
+		"@sapphire/prettier-config": "^2.0.0",
+		"cheerio": "^1.0.0",
+		"colorjs.io": "0.5.2",
+		"colorthief": "^2.6.0",
+		"dotenv": "^16.4.7",
+		"express": "^4.21.2",
+		"got": "^14.4.5",
+		"js-base64": "^3.7.7",
+		"node-cache": "^5.1.2",
+		"sharp": "^0.33.5",
+		"svg-round-corners": "^0.4.3",
+		"text-to-svg": "^3.1.5",
+		"word-wrap": "^1.2.5"
+	},
+	"devDependencies": {
+		"@types/color": "^4.2.0",
+		"@types/express": "^5.0.0",
+		"@types/sharp": "^0.31.1",
+		"@types/text-to-svg": "^3.1.4"
+	},
+	"prettier": "@sapphire/prettier-config",
+	"packageManager": "pnpm@9.13.2+sha512.88c9c3864450350e65a33587ab801acf946d7c814ed1134da4a924f6df5a2120fd36b46aab68f7cd1d413149112d53c7db3a4136624cfd00ff1846a0c6cef48a"
+}
