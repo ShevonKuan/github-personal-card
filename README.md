@@ -77,6 +77,7 @@ You can customize the appearance and content of your GitHub Personal Card by pas
 | `followers`    | Whether to display the user's follower count, if available.                         | Boolean | `true`        |
 | `repo`         | Whether to display the total repository count, if available.                        | Boolean | `true`        |
 | `bio`          | Whether to display the user's bio, if available.                                    | Boolean | `true`        |
+| `margin`       | The margin of the card eg. `&margin=5,5,5,5`                                        | String  | `0,0,0,0`     |
 
 ### Usage Example
 
