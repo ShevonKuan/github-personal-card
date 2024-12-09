@@ -79,8 +79,7 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
     //尺寸
     templete = templete.replace('{{width}}', data.options.size.width);
     templete = templete.replace('{{height}}', data.options.size.height);
-    //外边距
-    templete = setMargin(data, templete);
+
 
     //动画
     templete = templete.replace('{{fg-extra-class}}', data.options.animation ? 'animation-enabled' : '');
@@ -91,16 +90,17 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
 
     //圆头像
     if (data.options.round_avatar) {
-        templete = templete.replace(/<path id="avatar_clip"[^>]*><\/path>/, '<circle id="avatar_clip" class="cls-1" cx="62.5" cy="60.5" r="42.2"/>');
+        templete = templete.replace(/<path id="avatar_clip"[^>]*>/, '<circle id="avatar_clip" class="cls-1" cx="62.5" cy="60.5" r="42.2"/>');
     }
-
+    //外边距
+    templete = setMargin(data, templete);
     //name
     templete = templete.replace('{{name}}',
         getText(user.name, 118, 8, 18, '#fff', `text-anchor="start" dominant-baseline="hanging"`)
-        + getText(user.login + `${user.pronouns != null ? `・${user.pronouns}` : ""}` , 118, 37.84, 12, 'rgba(255, 255, 255, 0.5)', `text-anchor="start" dominant-baseline="auto"`)
+        + getText(user.login + `${user.pronouns != null ? `・${user.pronouns}` : ""}`, 118, 37.84, 12, 'rgba(255, 255, 255, 0.5)', `text-anchor="start" dominant-baseline="auto"`)
 
     );
-    
+
     //头像和封面
     templete = templete.replace('{{avatar-base64}}', avatarBase64);
     templete = templete.replace('{{user-cover-base64}}', userCoverImageBase64);
@@ -125,7 +125,7 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
     let line = 0;
     data.options.company ? line++ : null;
     data.options.location ? line++ : null;
-    let bio = data.options.bio ? libs.wrapTextMultiline(user.bio, 60, 3): [];
+    let bio = data.options.bio ? libs.wrapTextMultiline(user.bio, 60, 3) : [];
     data.options.bio ? line += bio.length : null;
     let fontSize = (line > 3) ? 10 : 12;
     let top = 42.84, bottom = 119;
@@ -141,13 +141,13 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
     }
     if (data.options.company) {
         var y = Y.shift();
-        detail.push(getSVGMini('company', 118, y+2, fontSize-1, 'rgba(255, 255, 255, 0.7)'));
-        detail.push(getText(user.company, 123+fontSize, y, fontSize, 'rgba(255, 255, 255, 0.7)', `text-anchor="start" dominant-baseline="hanging"`));
+        detail.push(getSVGMini('company', 118, y + 2, fontSize - 1, 'rgba(255, 255, 255, 0.7)'));
+        detail.push(getText(user.company, 123 + fontSize, y, fontSize, 'rgba(255, 255, 255, 0.7)', `text-anchor="start" dominant-baseline="hanging"`));
     }
     if (data.options.location) {
         var y = Y.shift();
-        detail.push(getSVGMini('location', 118, y+2, fontSize-1, 'rgba(255, 255, 255, 0.7)'));
-        detail.push(getText(user.location, 123+fontSize, y, fontSize, 'rgba(255, 255, 255, 0.7)', `text-anchor="start" dominant-baseline="hanging"`));
+        detail.push(getSVGMini('location', 118, y + 2, fontSize - 1, 'rgba(255, 255, 255, 0.7)'));
+        detail.push(getText(user.location, 123 + fontSize, y, fontSize, 'rgba(255, 255, 255, 0.7)', `text-anchor="start" dominant-baseline="hanging"`));
     }
 
     templete = templete.replace('{{detail}}', detail.join(''));
