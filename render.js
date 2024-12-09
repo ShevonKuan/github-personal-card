@@ -91,7 +91,7 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
 
     //圆头像
     if (data.options.round_avatar) {
-        templete = templete.replace(/<path id="avatar_clip"[^>]*>/, '<circle id="avatar_clip" class="cls-1" cx="62.5" cy="60.5" r="42.2"/>');
+        templete = templete.replace(/<path id="avatar_clip"[^>]*><\/path>/, '<circle id="avatar_clip" class="cls-1" cx="62.5" cy="60.5" r="42.2"/>');
     }
 
     //name
@@ -100,7 +100,7 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
         + getText(user.login + `${user.pronouns != null ? `・${user.pronouns}` : ""}` , 118, 37.84, 12, 'rgba(255, 255, 255, 0.5)', `text-anchor="start" dominant-baseline="auto"`)
 
     );
-
+    
     //头像和封面
     templete = templete.replace('{{avatar-base64}}', avatarBase64);
     templete = templete.replace('{{user-cover-base64}}', userCoverImageBase64);
@@ -126,7 +126,6 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
     data.options.company ? line++ : null;
     data.options.location ? line++ : null;
     let bio = data.options.bio ? libs.wrapTextMultiline(user.bio, 60, 3): [];
-    console.log(bio);
     data.options.bio ? line += bio.length : null;
     let fontSize = (line > 3) ? 10 : 12;
     let top = 42.84, bottom = 119;
@@ -151,7 +150,6 @@ export const getRenderedSVG = (data, avatarBase64, userCoverImageBase64) => {
         detail.push(getText(user.location, 123+fontSize, y, fontSize, 'rgba(255, 255, 255, 0.7)', `text-anchor="start" dominant-baseline="hanging"`));
     }
 
-    console.log(detail);
     templete = templete.replace('{{detail}}', detail.join(''));
 
 
